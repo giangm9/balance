@@ -1,0 +1,26 @@
+.main-text {
+    display: block;
+    padding: 2vmin;
+    margin-top: 30vmin;
+    text-align: justify;
+}
+.start-btn {
+    background-color: #C34F4F;
+    padding: 1vmin;    
+    color : white;
+    border: none;
+    border-radius: 2vmin;
+    display: block;
+    font-size: 6vmin;
+    margin: auto;
+    width: 50vmin;
+
+}
+
+.start-btn:hover {
+    border-radius: 0px;
+}
+
+.main-text {
+    font-size: 3vmin;
+}

@@ -1,0 +1,12 @@
+#id {
+    width: 100%;
+    height: 10vmin;
+    display: block;
+}
+
+.square {
+    width: 5vmin;
+    height: 5vmin;
+    display: block;
+    background: gray;
+}

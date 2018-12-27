@@ -1,0 +1,85 @@
+html {
+    background-color: #f1faee
+}
+
+body {
+    width: 100vmin;
+    height: 100vh;
+    display: block;
+    margin: auto;
+    background-color: #A8DADC;
+}
+
+p, button, input+label {
+    font-family: Inconsolata, monospace;
+}
+
+.header {
+
+    height: 12vmin;
+    vertical-align: middle;
+    background-color: #457b9d;
+    padding: 2vmin;
+    border-radius: 0.5vmin; 
+}
+
+.header-text {
+    display: block;
+    margin: auto;
+    text-align: center;
+    color: white;
+    font-size: 6vmin;
+}
+
+.selection-wrapper {
+    position: relative;
+    display: block;
+    padding: 1vmin;
+    font-size: 2vmin;
+    line-height: 4vmin;
+    border-bottom: 1px solid #457b9d;
+}
+
+.selection-wrapper > p {
+    line-height: 2vmin;
+    height: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    width: 95%;
+    margin: 0px;
+}
+
+
+.count-button {
+    display: inline-block;
+    border: none;
+    background-color: #A8DADC;
+    background-image: url('../img/next.png');
+    background-size: contain;
+    width: 4vmin;
+    height: 4vmin;
+}
+
+.random {
+    display: block;
+    margin: auto;
+    margin-top: 3vmin;
+    font-size: 3vmin;
+    padding: 1vmin;
+    background-color: #C34F4F;
+    font-size: 3vmin;
+    border-radius: 1vmin;
+    border : none;
+    color: white;
+    width: 40vmin;
+}
+
+
+
+.trans-border {
+    transition: border-radius 0.1s linear;
+}
+
+.trans-border:hover { 
+    border-radius: 0px;
+}

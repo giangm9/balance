@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Balance</title>
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="vendors/spectre.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/luachon.css" />
+    <script src="vendors/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="luachon">
+      <header-bar :scene-name="sceneName"></header-bar>
+      <p style='font-size: 3vmin;text-align: center; margin-bottom: 1vmin;'> Chọn thời gian </p>
+      <form class='min-select'>
+        <input type="radio" name="time" v-model="time" id="5min" value="5min" />
+
+        <label class='min' for="5min"> 5min </label>
+
+        <input
+          type="radio"
+          name="time"
+          v-model="time"
+          id="10min"
+          value="10min"
+        />
+        <label for="10min" class='min'>10min</label>
+      </form>
+      <action-selector
+        v-for="action in actions"
+        :key="action.id"
+        :name="action.name"
+        :url="action.url"
+        :img="action.icon"
+        :act="act"
+        :time="time"
+      >
+      </action-selector>
+    </div>
+  </body>
+
+  <script src="js/header.js"></script>
+  <script src="js/luachon.js"></script>
+</html>

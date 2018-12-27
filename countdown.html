@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Countdown</title>
+
+        <link rel="stylesheet" type="text/css" href="css/common.css">
+        <link rel="stylesheet" type="text/css" href="css/countdown.css">
+
+        <script src="vendors/vue.js"></script>
+        <script src="vendors/anime.min.js"></script>
+
+
+    </head>
+    <body>
+
+        <div id="keyframes">
+            <div class="square el"></div>
+        </div>
+
+        <div id='countdown'>
+            <p> {{content}} </p>
+
+            <p> {{time}} </p>
+            <button @click='start' :disabled='timer != null'> Bắt đầu </button>
+        </div>
+    </body>
+    <script src="js/utils.js"></script>
+    <script src="js/header.js"></script>
+    <script src="js/countdown.js"></script>
+</html>
