@@ -1,0 +1,30 @@
+.orb {
+  display: block;
+  height: 70vmin;
+  width: 70vmin;
+  border-radius: 140vmin;
+  background: #1f7a8c;
+  margin: auto;
+  margin-bottom: 1vmin;
+  transform: scale(0.3);
+}
+
+.orb_1 {
+  animation-name: orb_1;
+  animation-duration: 5s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@keyframes orb_1 {
+  from {
+    transform: scale(0.3);
+    background: #db222a;
+  }
+  to {
+    transform: scale(1);
+    background: #457b9d;
+  }
+}

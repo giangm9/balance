@@ -1,54 +1,59 @@
-var keyframes = anime({
-  targets: '#keyframes .el',
-  translateX: [
-    { value: 250, duration: 500, delay: 500, elasticity: 0 },
-    { value: 0, duration: 1000, delay: 500, elasticity: 0 }
-  ],
-  translateY: [
-    { value: 20, duration: 500, delay: 1000, elasticity: 100 },
-    { value: 0, duration: 500, delay: 1000, elasticity: 100 }
-  ],
-  scaleX: [
-    { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
-    { value: 1, duration: 900, elasticity: 300 },
-    { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
-    { value: 1, duration: 900, elasticity: 300 }
-  ],
-  scaleY: [
-    { value: [1.75, 1], duration: 500 },
-    { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
-    { value: 1, duration: 450 },
-    { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
-    { value: 1, duration: 450 }
-  ],
-  loop: true
+var time = 5 * 60;
+if (getParam("time") == "10min") {
+  time = 10 * 60;
+}
+var ring = null;
+var countdown = new Vue({
+  el: "#countdown",
+  data: {
+    sceneName: "",
+    content: getParam("title"),
+    time: time,
+    min: toMin(time),
+    timer: null,
+    percent: 0
+  },
+  methods: {
+    start: function() {
+      this.timer = setInterval(() => this.countdown(), 1000);
+    },
+
+    countdown: function() {
+      if (this.time == 0) {
+        return;
+      }
+      this.time--;
+      this.min = toMin(this.time);
+      this.percent = ((time - this.time) / time) * 100;
+      if (ring) {
+        ring.update(this.percent);
+      }
+    }
+  }
 });
 
-keyframes.pause();
-var time = 5 * 60;
-if (getParam('time') == '10min') {
-    time = 10 * 60;
+function toMin(time) {
+  var min = Math.round(time / 60);
+  var sec = time % 60;
+  var result = min.toString();
+  result += ":";
+  if (sec < 10) result += "0";
+  return result + sec.toString();
 }
-var countdown = new Vue({
-    el: '#countdown',
-    data : {
-        sceneName : "",
-        content : getParam('title'),
-        time : time,
-        timer : null
-    },
-    methods : {
 
-        start : function() {
-            this.timer = setInterval(() => this.countdown(), 1000)
-            keyframes.play();
-        },
+window.addEventListener("DOMContentLoaded", function() {
+  var chart = document.getElementById("chart");
+  var size = chart.offsetWidth;
 
-        countdown : function() {
-            this.time--;
-        }
-    }
+  var options = {
+    scaleColor: false,
+    trackColor: "rgba(255,255,255,0.3)",
+    barColor: "#E63946",
+    lineWidth: size * 0.1,
+    lineCap: "butt",
+    size: size * 0.9,
+    animate: false
+  };
 
-})
-
-
+  ring = new EasyPieChart(chart, options);
+});

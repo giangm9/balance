@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Countdown</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Countdown</title>
 
-        <link rel="stylesheet" type="text/css" href="css/common.css">
-        <link rel="stylesheet" type="text/css" href="css/countdown.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/countdown.css" />
 
-        <script src="vendors/vue.js"></script>
-        <script src="vendors/anime.min.js"></script>
+    <script src="vendors/vue.js"></script>
+  </head>
+  <body>
+    <div id="countdown">
+      <div id="chart" class="chart">
+        <p>{{ min }}</p>
+      </div>
 
+      <p class="content">{{ content }}</p>
 
-    </head>
-    <body>
-
-        <div id="keyframes">
-            <div class="square el"></div>
-        </div>
-
-        <div id='countdown'>
-            <p> {{content}} </p>
-
-            <p> {{time}} </p>
-            <button @click='start' :disabled='timer != null'> Bắt đầu </button>
-        </div>
-    </body>
-    <script src="js/utils.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/countdown.js"></script>
+      <button
+        class="start-btn trans-border"
+        @click="start"
+        :disabled="timer != null"
+      >
+        Bắt đầu
+      </button>
+    </div>
+    <a class="home-link" href="/">
+      <img src="img/home.png" />
+      <p>Trở về trang chủ</p></a
+    >
+  </body>
+  <script src="vendors/easypiechart.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/countdown.js"></script>
 </html>

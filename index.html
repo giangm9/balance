@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>The Balance</title>
-        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet"   >
-        <link rel="stylesheet" type="text/css" href="vendors/spectre.css">
-        <link rel="stylesheet" type="text/css" href="css/common.css">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link rel="stylesheet" type="text/css" href="css/luachon.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Balance</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="vendors/spectre.css" />
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/luachon.css" />
+  </head>
 
+  <body>
+    <div id="index">
+      <header-bar :scene-name="sceneName"></header-bar>
 
-    </head>
+      <p class="main-text">
+        Rối loạn cảm xúc lưỡng cực gây ảnh hưởng nghiêm trọng tới tâm sinh lý
+        của bệnh nhân, làm đảo lộn cuộc sống của họ. Những tác động tiêu cực của
+        hội chứng có thể giảm thiểu những tác động tâm lý tích cực bên ngoài.
+        Hãy cùng chúng tôi đối mặt với những tác động tiêu cực của căn bệnh này
+        bằng những hoạt động sau đây.
+      </p>
 
-    <body>
-        <div id="index">
-            <header-bar :scene-name="sceneName"></header-bar>
+      <button class="start-btn trans-border" v-on:click="start">start</button>
+    </div>
+  </body>
 
-            <p class='main-text'>
-            Rối loạn cảm xúc lưỡng cực gây ảnh hưởng nghiêm trọng tới tâm sinh lý
-            của bệnh nhân, làm đảo lộn cuộc sống của họ. Những tác động tiêu cực của
-            hội chứng có thể giảm thiểu những tác động tâm lý tích cực bên ngoài.
-            Hãy cùng chúng tôi đối mặt với những tác động tiêu cực của căn bệnh này
-            bằng những hoạt động sau đây.
-            </p>
-
-            <button class='start-btn' v-on:click="start">start</button>
-        </div>
-    </body>
-
-    <script src="vendors/vue.js"></script>
-    <script src="js/header.js"></script>
-    <script src="js/index.js"></script>
+  <script src="vendors/vue.js"></script>
+  <script src="js/header.js"></script>
+  <script src="js/index.js"></script>
 </html>
